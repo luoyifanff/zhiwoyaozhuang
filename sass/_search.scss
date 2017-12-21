@@ -1,0 +1,35 @@
+.search{
+        .sou{
+            overflow: hidden;       
+            input[type="text"]{
+                float: left;
+                @include size(326,40);
+                @include border(2,solid,$colorMain,all);
+                @include padding(0,10,0,10);
+                line-height: 36px;
+                color: $color-6c;
+            }
+            input[type='submit']{
+                float: left;
+                @include size(88,40);
+                background: $colorMain;
+                border: $none;
+                font: 16px/40px "";
+                color: #fff;
+            }    
+        }
+        .tuijian{
+            @include margin(5,0,0,0);
+            ul{
+                overflow: hidden;              
+                a{color: $color-6c;#{$underline}: $none;}
+                li{
+                    float: left;
+                    i{
+                        @include margin(0,5,0,8);                  
+                        color: $color-c4;
+                    }  
+                }       
+            }
+        }
+    }

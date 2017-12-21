@@ -1,0 +1,208 @@
+@charset "UTF-8";
+@import "public";
+@import "variable";
+@import "mixin";
+@import "search";
+@import "promise";
+@import "detail";
+.margin{width:960px;margin:0 auto;}
+#top{@extend #top;height: 32px;}
+#header{@extend #header;background: $color-white;height: 135px;}
+
+#cart{
+    .cartTitle{
+        height: 50px;
+        overflow: hidden;
+        line-height: 50px;      
+        span{
+            float: left;
+            font-size: $font-size20;
+        }
+        p{float: right;}
+    }
+    .cartbox{     
+        .listname{
+            background: $color-6c;
+            height: 40px;
+            line-height: 40px;
+            @include padding(0,0,0,30);
+            ol{
+                color: $color-white;
+                overflow: hidden;
+                li{
+                    float: left;
+                }
+                .listname-goodsinfo{width: 520px;}
+                .listname-price{width: 80px;}
+                .listname-number{width: 80px;}
+                .listname-money{width: 90px;}
+                .listname-integral{width: 80px;}
+                .listname-done{width: 80px;}
+            }
+        }
+        ul.goodslist{
+            overflow: hidden;
+            background: $color-white;
+            li{
+                height: 140px;
+                @include border(1,dashed,$color-c4,bottom);
+                @include padding(20,0,20,40);
+            }
+            li.module{display: none;}
+            .gimg{
+                float: left;
+                @include margin(0,20,0,0);
+                img{
+                    @include size(100,100);
+                    @include border(1,solid,$color-e2,all);
+                }
+            }
+            .gname{
+                float: left;
+                width: 380px;
+                a{
+                  color: $color-6c;
+                  &:hover{#{$underline}: $none;} 
+                }
+                p{width: 280px;}
+                @include margin(10,0,0,0);      
+            }
+            .gprice{
+                float: left;
+                color: $color-6c;             
+                font-size: $font-size14;
+                width: 75px;
+                @include margin(44,0,0,0);
+            }
+            .gamount{
+                float: left;
+                overflow: hidden;
+                text-align: center;
+                line-height: 18px; 
+                @include margin(44,40,0,0);
+                @include border(1,solid,$color-e2,all);              
+                span{float:left;@include size(15,20);cursor: pointer;}
+                input{float:left;@include size(25,20);border: none;text-align: center;}
+            }
+            .gmoney{
+                float: left;
+                @include margin(44,0,0,0);
+                width: 90px;
+                color: $color-ff643c;
+                font-size: $font-size14;
+            }
+            .gintegral{
+               @include margin(44,0,0,0);
+               float: left;
+               width: 83px;
+               font-size: $font-size14;
+            }
+            .gdone{
+                float: left;
+                text-align: center;
+                width: 30px;
+                line-height: 22px;
+                @include margin(32,0,0,0);
+                cursor: pointer;         
+            }
+        }
+        .gpay{
+            border-bottom: 3px solid #000;
+            height: 120px;
+            @include padding(50,0,0,0);
+            overflow: hidden;
+            background: $color-white;
+            .cleargoods{
+                float: left;
+                text-align: center;
+                line-height: 26px;
+                span{
+                    color: $color-6c;
+                    @include margin(0,25,0,25);
+                }
+                a{
+                    display: inline-block;
+                    @include size(73,26);
+                    background: $colorMain;
+                    color: $color-white;
+                    &:hover{#{$underline}: $none;}
+                }
+            }
+            .totalmoney{
+                float: right;
+                @include margin(-15,40,0,0);
+                span{
+                    color: $color-6c;
+                    i{
+                        font-size: $font-size16;
+                        color: $color-ff643c;
+                        @include margin(0,3,0,3);
+                    }
+                }
+                b{
+                    color: $color-ff643c;
+                    u{
+                        font-size: 28px;
+                    }
+                }
+                button{
+                    @include margin(0,0,0,15);
+                    @include size(124,46);
+                    text-align: center;
+                    background: $color-ff643c;
+                    color: $color-white;
+                    font-size: 24px;
+                    line-height: 46px;
+                    font-weight: $font-weight;
+                    border: $none;
+                }
+            }
+        }
+    }
+}
+
+#emp{
+    display: none;
+    background: $color-white;
+    height: 350px;
+    overflow: hidden;
+    @include padding(80,0,0,110);
+    img{
+        float: left;        
+    }
+    div.nonegoods{
+        float: left;
+        @include margin(60,0,0,60);
+        p{
+            font-size: 22px;
+            line-height: 46px;
+            color: $color-c4;
+            font-weight: $font-weight;
+        }
+        span{
+            font-size: 18px;
+            color: $color-6c;
+            line-height: 36px;          
+            a{
+                display: inline-block;
+                @include size(140,36);
+                text-align: center;
+                color: $color-white;
+                font-size: $font-size20;
+                background: $color-ff643c;
+                &:hover{#{$underline}: $none;}
+                @include margin(0,10,0,10);
+            }
+        }
+    }
+}
+
+#friendlink{
+    @extend #friendlink;
+     ul{
+        width: 850px;
+        li{@include margin(0,18,0,19);}
+    }
+}
+#promise{li{width: 120px;}}
+#footer{@extend #footer;}

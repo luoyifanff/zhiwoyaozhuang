@@ -1,0 +1,131 @@
+@charset "UTF-8";
+@import "public";
+@import "variable";
+@import "mixin";
+@import "search";
+@import "promise";
+@import "style";
+.margin{width:960px;margin:0 auto;}
+
+#top{@extend #top;}
+#header{@extend #header;background: $color-white;}
+#nav{@extend #nav;}
+body{background: #f6f6f3;}
+#goods{  
+    .lujin{
+        line-height: 40px;
+        background: $color-white;
+        height: 40px;
+        @include margin(0,0,1,0);
+        @include padding(0,0,0,30);
+        a{
+            font-weight: $font-weight;
+            color: $color-6c;
+            &:hover{#{$underline}:$none;}
+        }
+        span{color: $color-6c;@include margin(0,10,0,10);}
+        i{color: $color-ff643c;font-weight: $font-weight;}
+    }
+    .singlebox{
+        background: $color-white;
+        height: 150px;
+        @include margin(0,0,5,0);
+        overflow: hidden;
+        .text{
+            float: left;
+            width: 610px;
+            @include padding(20,0,0,40);
+            p{
+                font-size: $font-size16;
+                line-height: 26px;
+                color: $color-6c;
+                b{color: $color-ff643c;font-size: 18px;@include margin(0,10,0,0);}
+            }
+        }
+        img{
+            float: right;
+            @include size(235,150);
+            @include margin(0,38,0,38);
+        }
+    }
+    .detailInfo{
+        background: $color-white;
+        overflow: hidden;
+        img{@include size(650,350);float: left;}
+        ul{
+            float: right;
+            @include size(310,350);
+            li.time{
+                height: 50px;
+                line-height: 50px;
+                color: $color-c4;
+                @include padding(0,0,0,32);
+                i{
+                    float: left;
+                    display: block;
+                    @include size(16,16);
+                    background: url(../img/clock.png) no-repeat;
+                    background-position: 0 -232px;
+                    @include margin(17,5,0,0);
+                }
+                span{float: left;}
+            }
+            li.price{
+                background: $colorMain;
+                height: 56px;
+                span{
+                   color: $color-white;
+                   font-size: $font-size14;
+                   line-height: 56px;
+                   float: left;
+                   i{font-size: 32px;line-height: 56px;}
+                   @include margin(0,40,0,30)
+                }
+                button{
+                   float: left;
+                   @include size(140,36);
+                   background:#ff643c;
+                   color: $color-white;
+                   border: $none;
+                   @include margin(10,0,0,0);
+               }
+            }
+            li.empty{
+                height: 60px;
+                @include margin(0,10,0,10);
+                @include border(1,solid,$color-e2,bottom);
+            }
+            li.num{
+                text-align: center;
+                @extend li.empty;
+                height: 46px;
+                span{@include margin(0,10,0,10);line-height: 46px;}
+                u{color: $colorMain;font-size: $font-size14;font-weight: $font-weight;}
+                i{color: $color-6c;font-size: $font-size14;font-weight: $font-weight;}
+            }
+            li.function{
+                overflow: hidden;
+                @include padding(20,0,0,30);
+                p{
+                    float: left;
+                    text-align: center;
+                }
+                span{
+                    float: left;
+                    @include margin(0,8,0,8);
+                }
+                .p1{background: $colorMain;@include size(40,20);color: $color-white;}
+            }
+        }
+    }
+}
+
+#friendlink{
+    @extend #friendlink;
+     ul{
+        width: 850px;
+        li{@include margin(0,18,0,19);}
+    }
+}
+#promise{@extend #promise;}
+#footer{@extend #footer;}

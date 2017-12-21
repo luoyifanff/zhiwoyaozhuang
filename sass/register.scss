@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import "public";
+@import "variable";
+@import "mixin";
+@import "style";
+
+#top{@extend #top;}
+
+
+#header{   
+    height: 108px;
+    h1{float: left;}
+    img{float: right;}
+}
+
+#userInfo{
+    position: relative;
+    height: 785px;
+    background: url(http://images.zhiwo.com/product/2015/0724/11885557634631760229.jpg) no-repeat -300px;
+    .box{
+        background: $color-white;
+        position: absolute;
+        left: 60%;
+        top: 15%;
+        @include size(406,529);
+        @include padding(0,40,40,40);
+        .top{
+            overflow: hidden;
+            @include margin(32,0,32,0);
+            span{
+                float: left;
+                font-size: $font-size20;
+                font-weight: $font-weight;
+            }
+            a{
+                float: right;
+                color: $color-c4;
+                i{color: $colorMain;font-size: $font-size14;}
+            }  
+        }
+        .center{
+            @include border(1,dashed,$color-e2,bottom);
+            .phone,.psw,.repsw,.code{height: 60px;}
+            input{
+                font-size: $font-size14;
+                @include padding(0,0,0,10);
+                color: $color-c4;
+                @include size(324,32);
+                @include border(1,solid,$color-c4,all);                
+            }
+            p{line-height: 26px;color: #f40;}
+            .code{
+                overflow: hidden;
+                input{
+                    float: left;
+                    @include size(175,32);
+                }              
+                span{
+                    float:right;
+                    color: $colorMain;
+                    font-size: $font-size14;
+                    @include margin(6,0,6,10);
+                    cursor: pointer;
+                }
+                div{
+                    float:right;
+                    @include size(73,18);
+                    text-align: center;
+                    line-height: 18px;
+                    color: #3e2e15;
+                    background: #ebeced;
+                    @include margin(7,0,7,0);
+                    @include border(1,solid,#7697c7,all);
+                }
+                p{float: left;line-height: 26px;}               
+            }
+            input[type='submit']{
+                background: $colorMain;
+                color: $color-white;
+                font-size: 18px;
+                line-height: 30px;
+                text-align: center;
+                border: none;
+                margin-bottom: 0;
+            }
+            p.xieyi{a{color: $colorMain;}}
+        }
+        .bottom{
+            p{line-height: 42px;}
+            ul{
+                @include margin(20,0,0,0);
+                overflow: hidden;
+                li{
+                    height: 30px;
+                    float: left;
+                    @include padding(0,0,0,30);
+                    @include margin(0,20,20,0);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+#friendlink{@extend #friendlink;}
+#promise{@extend #promise;}
+#footer{@extend #footer;}

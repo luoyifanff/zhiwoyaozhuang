@@ -1,0 +1,614 @@
+@charset "UTF-8";
+@import "public";
+@import "variable";
+@import "mixin";
+@import "search";
+@import "promise";
+.margin{width:1100px;margin:0 auto;}
+
+#top{    
+    background: #f2f2f2;
+    border-bottom: 1px solid #e5e5e5;
+    div.left{
+        float: left;
+        @include size(550,28);
+        line-height: $line-height28;
+        span{
+            color: $color-6c;           
+            @include margin(0,30,0,0);      
+        }
+        a:hover{
+            #{$underline}: $none;
+        }
+        .login{
+            @extend span;           
+        }
+        .register{
+            color: $color-6c;
+        }
+    }
+    div.right{
+        float: right;
+        line-height: $line-height28;
+        @include size(360,28);
+        color: $color-6c;
+        .col-md-3{
+            position: relative;      
+            height: $height28;
+            float: left;            
+            @include padding(0,5,0,15);
+            span{
+                float: left;
+            }
+            i{
+                float: left;
+                @include size(8,28);
+                @include margin(0,0,0,5);
+            }           
+        }
+        .d1{           
+            i{
+                background: url(../img/topnav.png) no-repeat;
+                background-position:0 -70px;
+            }
+            div{
+                @include border(1,solid,#e5e5e5,all);
+                border-top: $none;
+                width: 92px;
+                position: absolute;
+                z-index: 21;
+                top: 28px;
+                left: 0;
+                display: none;
+                margin-left: -1px;
+                img{@include size(90,90);}
+            }
+        }        
+        .d2{
+            i{
+                background: url(../img/topnav.png) no-repeat;
+                background-position:0 -1px;
+                @include margin(0,5,0,0);
+            }           
+        }
+        .d3{
+            @extend .d1;
+        }
+        .d4{
+            position: relative;
+            @extend .d1;
+            b{
+                position: absolute;
+                left: -1px;
+                color: $color-c4;
+            }
+        }
+    }
+}
+
+#header{   
+    height: 108px;
+    h1{float: left;}
+    .search{
+        float: left;
+        @extend .search;
+        @include margin(25,0,0,80);
+    }
+       
+    .shopcar{
+        position: relative;
+        float: right;
+        @include size(124,38);
+        @include border(2,solid,$color-e2,all);
+        @include margin(25,0,0,0);
+        color: $color-6c; 
+        background: $color-white;     
+        b{
+            float: left;
+            color: $colorMain;
+            font-size: $font-size20;
+            line-height: $line-height34;
+            @include margin(0,5,0,10);
+        }
+        span{
+            float: left;
+            line-height: $line-height34;
+        }
+        i{
+           float: left;
+           display: inline-block;
+           @include size(8,8);
+           background: url(../img/topnav.png) no-repeat;
+           background-position:0 -81px;
+           @include margin(13,0,0,5);
+        } 
+        .zhezhao{
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            z-index: 20;
+            left: 0;
+            background: $color-white;
+            display: none;
+        }     
+    }
+    .empty{
+        display: none;
+        position: absolute;
+        z-index: 19;
+        right: -2px;      
+        @include size(280,362);
+        text-align: center;
+        @include border(2,solid,$color-e2,all);
+        background: $color-white;
+        color: $color-c4;
+        img{
+            display: inline-block;
+            @include margin(40,0,10,0);
+        }
+    } 
+}
+
+#nav{
+    background: $colorMain;
+    height: 35px;
+    .margin{position: relative;}    
+    ul{
+        float: left;        
+        li{
+            @include size(120,35);        
+            float: left;
+            text-align: center;
+            line-height: 35px;            
+            a{display:block;color: $color-white;#{$underline}: $none;height: 100%;}
+        }
+        li.shouye{background: $color-00647f;}
+        li.zwsc{           
+            &:hover{background: $color-00647f;}        
+            i{            
+              display: inline-block;
+              @include size(8,8);
+              background: url(../img/topnav.png) no-repeat;
+              background-position:0 -154px;
+              @include margin(0,0,0,5);  
+            }
+            .list{ 
+                display: none;               
+                position: absolute;
+                z-index: 15;
+                left: 0;
+                top: 35px;
+                background: $color-white;
+                @include size(1100,288);
+                @include padding(45,0,0,0);
+                li{  
+                    height: auto;
+                    text-align: left;              
+                    width: 355px;
+                    @include margin(0,0,30,45);
+                    dl{overflow: hidden;}
+                    dt{ 
+                        font-weight: $font-weight;
+                        font-size: $font-size14;
+                        line-height: 30px;
+                        color: $color-6c;
+                        @include padding(0,0,0,30);                                           
+                        @include border(1,dashed,$color-c4,bottom);
+                        
+                    }                 
+                    dd{
+                        a{color: $color-6c;}
+                        float: left;
+                        @include margin(12,19,0,0);
+                    }
+                }
+            }
+        }          
+        li.zwht{
+            background: url(../img/home_overseas.gif) no-repeat;
+            &:hover{background: url(../img/home_overseas2.gif) no-repeat;;}
+        }
+    }
+    ol{    
+        float: right;    
+        @extend .promise;
+        li{
+            float: right;
+            width:0;
+            @include margin(0,0,0,8);
+            overflow: hidden;
+            color: $color-white;
+            line-height: 35px;
+        }
+    }
+}
+
+#banner{
+    position: relative;
+    ul{position: relative;height: 350px; }
+    li{ 
+      height: 350px;
+      width: 100%;  
+      position: absolute;
+      a{display: block;height: 100%;}  
+    }
+    ol{
+        position: absolute;
+        @include size(100,10);
+        bottom: 20px;
+        left: 0;      
+        right: 0;
+        margin: auto;
+        overflow: hidden;
+        li{
+            position: static;
+            float: left;
+            @include margin(0,5,0,5);
+            @include size(10,10);
+            background: $color-6c;
+        }
+        .active{background: $colorMain;}
+    }  
+}
+.bg{
+    background: #f6f6f3;
+    @include padding(0,0,34,0);
+}
+#headlines{ 
+    h3{text-align: center;@include padding(40,0,0,0);}
+    li{
+        overflow: hidden;
+        @include padding(20,0,0,0);
+        .img{float: left;@include size(650,350);}
+        .introduce{
+            position: relative;
+            @include size(450,350);
+            float: left;
+            background: $color-white;
+            @include padding(29,50,26,50);
+            text-align: center;
+            span{
+                font-size: $font-size14;
+                color: #000;
+            };
+            p{
+                @include margin(30,0,0,0);
+                text-align: left;              
+                line-height: 24px;
+                a{
+                  font-size: $font-size16;
+                  color: $color-6c;
+                  &:hover{#{$underline}:$none;}  
+                }
+            }
+            .price{
+                position: absolute;
+                width: 350px;
+                bottom: 30px;                
+                b{
+                    float: left;
+                    color: #000;
+                    font-size: 36px;
+                    position: relative;
+                    i{
+                        font-size: $font-size20;
+                        position: relative;
+                        left: 0;
+                        top: -12px;
+                    }
+                }
+                button{
+                    @include size(140,36);
+                    @include margin(8,0,0,0);
+                    border: $none;
+                    float: right;
+                    background: $color-ff643c;
+                    color: $color-white;
+                    font-size: $font-size16;
+                    font-weight: $font-weight;
+                    line-height: $line-height36;
+                }
+                .yiyou{
+                    text-align: right;
+                    color: $color-c4;
+                    position: absolute;
+                    bottom: -20px;
+                    right: 0;
+                }
+            }          
+        }
+        
+    }
+}
+
+#brand{   
+    @include padding(20,0,0,0);
+    .area{
+        height: 44px;        
+        @include border(1,solid,$color-6c,bottom);
+        ul{
+            float: left;             
+            width: 560px;               
+            li{
+                float: left;
+                @include size(140,44);
+                text-align: center;
+                font-size: $font-size14;
+                font-weight: $font-weight;
+                line-height: $line-height44;
+                color: #000;
+                margin-bottom: -1px;              
+            }
+        }     
+        a{
+            float: right;
+            color: $color-6c;
+            line-height: $line-height44;
+        }
+        .areaHover{
+            color: $colorMain;
+            @include border(2,solid,$colorMain,bottom);
+        }
+    }
+    .brandlogo{
+        overflow: hidden;
+        position: relative;
+        ul{
+            position: absolute;
+            width: 840px;
+            float: left;
+            overflow: hidden;
+            background: #f6f6f3;
+            li{
+                float: left;
+                @include size(160,102);
+                @include margin(10,8,0,0);
+                img{@include size(160,102);}
+            }            
+        }
+        .pic{
+            float: right;
+            @include size(260,212);
+            position: relative;
+            @include margin(10,0,0,0);
+            li{position: absolute;}                           
+            img{
+                @include size(260,212);
+            }
+            span{
+                color: $color-6c;
+                position: absolute;               
+                font-size: 26px;
+                line-height: 26px;
+                background: $color-e2;
+                opacity: .6;
+                filter:alpha(opacity=60);
+            }
+            span.glyphicon-menu-left{
+                left: 10px; 
+            } 
+            span.glyphicon-menu-right{
+                right: 10px;
+            }                     
+        }
+    }   
+}
+
+#hot_deals{ 
+    overflow: hidden;
+    h4{
+        @include margin(38,0,20,0);
+    }
+    ul{width: 110%;}
+    li{
+        background: $color-white;        
+        @include size(350,510);
+        overflow: hidden;
+        @include margin(0,25,25,0);
+        float: left;
+        .image{@include size(350,350);a{display: block;height: 100%;}}
+        .name{
+            width: 350px; 
+            background: $color-white;            
+            @include padding(11,20,0,20);
+            p{  
+                height: 40px;          
+                font: $font-size12;
+                line-height: $line-height20;
+                a{color: $color-6c;}
+            }
+            .join{             
+               height: 65px;
+               @include padding(10,0,20,0);
+               @include border(1,dashed,$color-c4,bottom);
+               span{
+                   color: #ff643c;
+                   font-size: $font-size14;
+                   float: left;
+                   i{font-size: 26px;line-height: 26px;}
+                }
+               button{
+                   float: right;
+                   @include size(90,26);
+                   background:#ff643c;
+                   color: $color-white;
+                   border: $none;
+               }
+            }
+        }
+        .time{
+        @include size(350,40);        
+        line-height: 40px;
+        color: $color-c4;
+        @include padding(0,20,0,20);
+        i{  
+            float: left;
+            display: inline-block;
+            @include size(16,16);
+            background: url(../img/clock.png) no-repeat;
+            background-position: 0 -232px;
+            @include margin(12,5,0,0);
+        }
+        span{float: left;u{@include margin(0,0,0,5);}}
+        b{float: right;}
+    }
+    }
+}
+
+ #subsearch{
+    height: 120px;
+    background: $color-white;
+    @include padding(30,0,0,0);
+    .package{
+        width: 596px;
+        margin: 0 auto;      
+        @extend .search;
+        .sou{         
+            input[type='text']{
+                @include size(508,40);
+            }
+        }
+    }
+}
+
+#friendlink{
+    .margin{
+        overflow: hidden;
+        @include padding(24,0,41,0);
+    }
+    ul{
+        width: 991px;
+        float: left;
+        overflow: hidden;
+        color: $color-6c;
+        font-size: $font-size14;
+        li{
+            float: left;
+            @include margin(0,28,0,28);
+            dt{font-weight: bold;line-height: $line-height36;}
+            dd{
+                line-height: 24px;
+                a{
+                    color: $color-6c; 
+                    &:hover{#{$underline}:$none;}
+                }
+            }
+        }       
+    }
+    .erweicode{
+        float: right;
+        @include margin(0,0,0,20);
+        text-align: center;
+        span{
+            line-height: $line-height36;
+            font-weight: $font-weight;
+            font-size: $font-size14;
+            color: $color-6c;
+        }
+        img{
+            @include size(89,89);            
+        }
+    }
+}
+
+#promise{
+    background: $colorMain;
+    ul{
+        @include size(590,35);
+        margin: 0 auto;
+        overflow: hidden;
+        @extend .promise;
+        li{
+            width: 147px;
+            float: left;
+            line-height: 35px;
+            font-weight: $font-weight;
+            font-size: $font-size12;
+            color: $color-white;
+        }
+    }  
+}
+
+#footer{
+    height: 204px;
+    @include padding(18,0,0,0);
+    .link{@include margin(0,0,18,0);}
+    .webinfo{
+        text-align: center;
+        p{font: $font-size12/22px '';color: $color-6c;}
+        a{color: $color-6c;}
+        i{@include margin(0,5,0,5);}
+    }
+    .pay{
+        overflow: hidden;
+        @include size(390,50);
+        margin: 20px auto;     
+        img{float: left;}
+        //@include margin(25,0,0,0);
+    }
+}
+
+#aside-r{
+    width: 35px;
+    height: 100%;
+    background: $color-6c;
+    position: fixed;
+    right: 0;
+    top: 0;
+    i{
+        background: url(../img/sideicon.png) no-repeat;
+        display: block;
+        @include size(35,35);
+    }
+    .car{background-position: 0 -35px;}
+    .num{
+        text-align: center;
+        line-height: $line-height34;
+        color: $color-white;
+        background-position: 0 -210px;
+    }
+    .heart{background-position: 0 -70px;}
+    .footprint{background-position: 0 -105px;}
+    .code{background-position: 0 -140px;}
+    .service{background-position: 0 -175px;}
+    .ul1{
+        position: absolute;
+        z-index: 2;
+        background: $color-6c;
+        left: 0;
+        top:50%;      
+        @include margin(-200,0,0,0);
+        li{@include margin(0,0,20,0);cursor: pointer;}       
+        .shopping{
+            &:hover{
+                & .num{
+                    background-position: 0 -245px;
+                    color: #f40;
+                }
+            }
+            span{
+                display: block;
+                width: 15px;
+                margin: 0 auto;
+                color: $color-white;
+            }    
+        }       
+    }
+    .ul2{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 5%;
+        text-align: center;
+        color: $color-white;
+        li{cursor: pointer;@include margin(10,0,5,0);}
+        b{
+           display: block;
+           @include border(5,solid,transparent,all);
+           @include border(5,solid,$color-white,bottom);
+           @include size(0,0);
+           margin: 2px auto;
+        }
+    }
+    li:hover{background: $colorMain;} 
+}

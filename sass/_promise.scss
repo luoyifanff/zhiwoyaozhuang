@@ -1,0 +1,19 @@
+.promise{
+    li{
+        height: 35px;        
+        @include padding(0,0,0,25);
+        background: url(../img/assure2.png) no-repeat;
+    }
+    .p1{
+        background-position: 0 0;
+    }
+    .p2{
+        background-position: 0 -35px;
+    }
+    .p3{
+        background-position: 0 -70px;
+    }
+    .p4{
+        background-position: 0 -105px;
+    }
+}

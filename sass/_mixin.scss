@@ -1,0 +1,32 @@
+@mixin size($width,$height){
+    width: $width + px;
+    height: $height + px;
+}
+
+@mixin margin($top,$right,$bottom,$left){
+    margin-top: $top + px;
+    margin-right: $right + px;
+    margin-bottom: $bottom + px;
+    margin-left: $left + px;
+}
+
+@mixin padding($top,$right,$bottom,$left){
+    padding-top: $top + px;
+    padding-right: $right + px;
+    padding-bottom: $bottom + px;
+    padding-left: $left + px;
+}
+
+@mixin border($width,$style,$color,$direction){
+    @if $direction==all{
+      border-width: $width + px;
+      border-style: $style;
+      border-color: $color;  
+    }@else{
+        border-#{$direction}-width: $width + px;
+        border-#{$direction}-style: $style;
+        border-#{$direction}-color: $color;
+    }
+    
+}
+
